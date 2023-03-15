@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+  font-family: "Inter", "sans-serif";
+  font-weight: 400;
+}
+.dropdown-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  background-color: #dad4cd;
+  padding: 10px;
+  z-index: 20;
+  border-radius: 8px;
+  max-height: 100px;
+  overflow-y: auto;
+}
+.dropdown-item {
+  border-bottom: 1px solid #6a6969a4;
+  padding: 5px 0px;
+}
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: translateX(-100%);
+}
+.menu > * ~ * {
+  margin-top: 40px;
+}
+.menu.active {
+  transform: translateX(0);
+}
+.prev,.next{
+ cursor: pointer;
+ transition: 0.3s ease;
+}
+.prev:hover,.next:hover{
+  border-bottom: 2px solid #000;
+  opacity: 1;
+  transform: translateY(20px);
+}
+.tab{
+  transition: all 0.2s ease
+}
+.tab.active{
+  opacity: 1;
+  color: #4D46FA;
+  border-bottom: 2px solid #4D46FA;
+}
+.btn-choose.active{
+  background-color: #F06336;
+  color: wh;
+}
