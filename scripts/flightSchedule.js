@@ -62,8 +62,8 @@ if (!flightInfo) {
          ${flightInfo.typeSeat}
       </div>
     </div>
-    <div class="btn-change bg-[#F06336] flex items-center gap-x-2 cursor-pointer py-1 px-2 rounded-md">
-      <p class="text-sm font-semibold text-white">Change Flights</p>
+    <div class="btn-change bg-[#F06336] w-full justify-center order-last flex items-center gap-x-2 cursor-pointer py-1 px-2 rounded-md">
+      <p class="text-sm font-semibold text-white ">Change Flights</p>
       <span
         ><svg
           width="14"
@@ -113,15 +113,12 @@ chooseBtn.forEach((btn, index) => {
 // Xử lý sự kiện click cho từng tab
 tabs.forEach((tab, index) => {
   tab.addEventListener("click", () => {
-    // Ẩn toàn bộ nội dung tab trước đó
     tabContents.forEach((content) => {
       content.style.display = "none";
     });
 
-    // Hiển thị nội dung tương ứng với tab đang được click
     tabContents[index].style.display = "flex";
 
-    // Đánh dấu tab đang được click là active
     tabs.forEach((tab) => {
       tab.classList.remove("active");
     });

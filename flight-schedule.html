@@ -110,13 +110,13 @@
     <!-- Modal change flight -->
     <div
       id="modal-change-flight"
-      class="hidden h-screen w-full absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] flex items-center justify-center z-30"
+      class="hidden h-screen w-full max-w-[300px] md:max-w-[768px] fixed left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] flex items-center justify-center z-30"
     >
       <div
         class="px-3 border-2 border-gray-400 lg:px-[30px] py-3 lg:pt-[30px] lg:pb-[50px] shadow-lg max-w-[1230px] absolute mx-auto w-full bg-white rounded-xl z-10"
       >
         <div
-          class="close-btn absolute top-1 right-2 text-2xl font-semibold cursor-pointer"
+          class="close-btn absolute top-1 right-2 text-2xl font-semibold cursor-pointer z-50"
         >
           X
         </div>
@@ -665,11 +665,11 @@
       <div class="flex flex-row flex-wrap">
         <main role="main" class="w-full md:w-2/3 lg:w-3/4">
           <div class="max-w-7xl">
-            <div class="flex items-center justify-end space-x-1 lg:space-x-4">
-              <div class="font-semibold opacity-50 uppercase text-sm">
-                Filter
-              </div>
-              <div class="w-fit">
+            <div class="font-semibold opacity-50 w-full text-center uppercase text-sm">
+              Filter
+            </div>
+            <div class="grid grid-cols-2  gap-1">
+              <div class="w-full md:w-fit">
                 <select
                   id="transit-filter"
                   name="transit-filter"
@@ -681,7 +681,7 @@
                   <option value="2stop">Two stop</option>
                 </select>
               </div>
-              <div class="w-fit">
+              <div class="w-full md:w-fit">
                 <select
                   id="price-filter"
                   name="price-filter"
@@ -692,7 +692,7 @@
                   <option value="high">High Price</option>
                 </select>
               </div>
-              <div class="w-fit">
+              <div class="w-full md:w-fit">
                 <select
                   id="time-filter"
                   name="time-filter"
@@ -703,7 +703,7 @@
                   <option value="far">Time Far</option>
                 </select>
               </div>
-              <div class="w-fit">
+              <div class="w-full md:w-fit">
                 <select
                   id="airline-filter"
                   name="airline-filter"
@@ -719,8 +719,8 @@
           </div>
 
           <!-- list flight -->
-          <div id="list-flight-container">
-            <div class="mt-1 bg-white p-[20px] rounded-xl">
+          <div class="list-flight-container">
+            <div class="mt-1 bg-white p-3 md:p-[20px] rounded-xl">
               <div class="flex items-center justify-between flex-wrap">
                 <div class="flex items-center gap-x-2">
                   <span
@@ -786,7 +786,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div class="flex items-center gap-x-2">
                     <div class="h-[14px]">
                       <img
@@ -816,7 +816,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div>
                     <del class="text-sm font-extralight opacity-50"
                       >1,326,000 vnd</del
@@ -828,7 +828,7 @@
                 </div>
                 <div>
                   <button
-                    class="btn-choose bg-[#F063361A] text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
+                    class="btn-choose bg-[#F063361A] w-full text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
                   >
                     Choose
                   </button>
@@ -844,7 +844,7 @@
                   >fare info</span
                 >
                 <div
-                  class="ml-auto h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
+                  class="ml-auto hidden md:block h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
                 ></div>
               </div>
 
@@ -852,19 +852,19 @@
                 class="mt-4 flex tab-body hidden flex-wrap"
                 id="flight-detail"
               >
-                <div class="flex gap-x-8 lg:w-1/3">
+                <div class="flex gap-x-4 md:gap-x-8 lg:w-1/3">
                   <div
-                    class="flex flex-col justify-between items-start gap-y-5"
+                    class="flex flex-col justify-between items-start gap-y-3"
                   >
                     <div class="flex flex-col items-center gap-y-1">
                       <div class="text-sm font-semibold">21:40</div>
-                      <div class="font-light text-sm">11 Feb</div>
+                      <div class="font-light text-xs sm:text-sm">11 Feb</div>
                     </div>
-                    <div class="font-light text-sm">1h30m</div>
+                    <div class="font-light text-xs sm:text-sm">1h30m</div>
                     <div>
                       <div class="flex flex-col items-center gap-y-1">
                         <div class="text-sm font-semibold">21:40</div>
-                        <div class="font-light text-sm">11 Feb</div>
+                        <div class="font-light text-xs sm:text-sm">11 Feb</div>
                       </div>
                     </div>
                   </div>
@@ -936,7 +936,7 @@
                     </div>
                   </div>
                   <div
-                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-2 gap-2 p-2"
+                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-1 md:grid-cols-2 w-full md:gap-2 gap-y-2 p-2"
                   >
                     <div>
                       <span class="text-sm font-light">Baggage</span>
@@ -998,7 +998,7 @@
                     </div>
                   </div>
                   <div class="flex items-center gap-x-2 mt-2 mb-1">
-                    <div class="capitalize font-light text-md">Da Nang</div>
+                    <div class="capitalize font-light text-sm">Da Nang</div>
                     <div>
                       <svg
                         width="63"
@@ -1032,7 +1032,7 @@
                         />
                       </svg>
                     </div>
-                    <div class="capitalize font-light text-md">Ho chi minh</div>
+                    <div class="capitalize font-light text-sm">Ho chi minh</div>
                   </div>
                   <div class="text-[#4D46FA] font-light text-xs">Economy</div>
                   <p class="text-sm font-light mt-5">
@@ -1040,40 +1040,40 @@
                   </p>
                 </div>
                 <div class="lg:ml-auto mt-2 lg:mt-0 w-full lg:w-2/3">
-                  <div class="text-md uppercase font-semibold mb-5">
+                  <div class="text-sm uppercase font-semibold mb-5">
                     price details
                   </div>
                   <div>
                     <table class="w-full">
                       <tbody>
                         <tr>
-                          <td class="font-normal pb-1">
+                          <td class="font-normal text-xs md:text-sm pb-1">
                             Adult Basic Fare (x1)
                           </td>
-                          <td class="text-right font-semibold pb-1">
+                          <td class="text-right font-semibold text-xs md:text-sm pb-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Tax</td>
-                          <td class="text-right font-normal py-1">included</td>
+                          <td class="font-normal text-xs md:text-sm py-1">Tax</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">included</td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Regular Total Price</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="font-normal text-xs md:text-sm py-1">Regular Total Price</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="text-[#F06336] font-medium py-1">Save</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="text-[#F06336] font-medium text-xs md:text-sm py-1">Save</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             -4,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal border-t-2 py-2">You Pay</td>
+                          <td class="font-normal text-xs md:text-sm border-t-2 py-2">You Pay</td>
                           <td
-                            class="text-right text-[#F06336] font-semibold border-t-2 py-2"
+                            class="text-right text-[#F06336] font-semibold text-xs md:text-sm border-t-2 py-2"
                           >
                             1,322,000 vnd
                           </td>
@@ -1084,375 +1084,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div id="list-flight-container">
-            <div class="mt-1 bg-white p-[20px] rounded-xl">
-              <div class="flex items-center justify-between flex-wrap">
-                <div class="flex items-center gap-x-2">
-                  <span
-                    ><img
-                      src="./assets/image/bambooairline.png"
-                      alt="bambooairline" /></span
-                  ><span class="text-sm font-semibold uppercase"
-                    >Vietnam Airlines</span
-                  >
-                </div>
-                <div class="flex gap-x-2 items-center">
-                  <div class="flex flex-col items-center gap-y-1">
-                    <div class="text-sm font-semibold">21:40</div>
-                    <div
-                      class="py-1 px-2 rounded-2xl text-xs font-semibold uppercase bg-[#4D46FA1A]"
-                    >
-                      DAD
-                    </div>
-                  </div>
-                  <div class="flex flex-col items-center">
-                    <div class="font-light text-sm">1h30m</div>
-                    <div>
-                      <svg
-                        width="92"
-                        height="7"
-                        viewBox="0 0 92 7"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          x="0.5"
-                          y="0.5"
-                          width="6"
-                          height="6"
-                          rx="3"
-                          fill="white"
-                          stroke="#4D46FA"
-                        />
-                        <rect
-                          x="84.8188"
-                          width="7"
-                          height="7"
-                          rx="3.5"
-                          fill="#4D46FA"
-                        />
-                        <line
-                          x1="7"
-                          y1="3.5"
-                          x2="85"
-                          y2="3.5"
-                          stroke="#4D46FA"
-                        />
-                      </svg>
-                    </div>
-                    <div class="font-light text-sm">Direct</div>
-                  </div>
-                  <div class="flex flex-col items-center gap-y-1">
-                    <div class="text-sm font-semibold">23:40</div>
-                    <div
-                      class="py-1 px-2 rounded-2xl text-xs font-semibold uppercase bg-[#4D46FA1A]"
-                    >
-                      DAD
-                    </div>
-                  </div>
-                </div>
-                <div class="order-last md:order-none">
-                  <div class="flex items-center gap-x-2">
-                    <div class="h-[14px]">
-                      <img
-                        src="./assets/image/icon/suitcase.png"
-                        alt="suitcase"
-                      />
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">Baggage</span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >20kg</span
-                      >
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-x-2">
-                    <div class="h-[14px]">
-                      <img
-                        src="./assets/image/icon/cutlery.png"
-                        alt="suitcase"
-                      />
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">In-flight</span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >Meal</span
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="order-last md:order-none">
-                  <div>
-                    <del class="text-sm font-extralight opacity-50"
-                      >1,326,000 vnd</del
-                    >
-                  </div>
-                  <div class="text-sm font-semibold text-[#F06336]">
-                    1,322,000 vnd
-                  </div>
-                </div>
-                <div>
-                  <button
-                    class="btn-choose bg-[#F063361A] text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
-                  >
-                    Choose
-                  </button>
-                </div>
-              </div>
-              <div class="mt-[30px] tabs flex items-center">
-                <span
-                  class="tab cursor-pointer uppercase font-semibold text-xs opacity-50"
-                  >Flight detail</span
-                >
-                <span
-                  class="tab cursor-pointer ml-3 uppercase font-semibold text-xs opacity-50"
-                  >fare info</span
-                >
-                <div
-                  class="ml-auto h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
-                ></div>
-              </div>
-
-              <div
-                class="mt-4 flex tab-body hidden flex-wrap"
-                id="flight-detail"
-              >
-                <div class="flex gap-x-8 lg:w-1/3">
-                  <div
-                    class="flex flex-col justify-between items-start gap-y-5"
-                  >
-                    <div class="flex flex-col items-center gap-y-1">
-                      <div class="text-sm font-semibold">21:40</div>
-                      <div class="font-light text-sm">11 Feb</div>
-                    </div>
-                    <div class="font-light text-sm">1h30m</div>
-                    <div>
-                      <div class="flex flex-col items-center gap-y-1">
-                        <div class="text-sm font-semibold">21:40</div>
-                        <div class="font-light text-sm">11 Feb</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <svg
-                      width="7"
-                      height="149"
-                      viewBox="0 0 7 149"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect
-                        x="6.5"
-                        y="0.5"
-                        width="6"
-                        height="6"
-                        rx="3"
-                        transform="rotate(90 6.5 0.5)"
-                        fill="white"
-                        stroke="#4D46FA"
-                      />
-                      <rect
-                        x="7"
-                        y="142"
-                        width="7"
-                        height="7"
-                        rx="3.5"
-                        transform="rotate(90 7 142)"
-                        fill="#4D46FA"
-                      />
-                      <line
-                        x1="3.5"
-                        y1="6"
-                        x2="3.49999"
-                        y2="142"
-                        stroke="#4D46FA"
-                      />
-                    </svg>
-                  </div>
-
-                  <div class="flex flex-col justify-between items-start">
-                    <div class="flex flex-col items-start gap-y-1">
-                      <div class="text-sm font-semibold">Da nang (DAD)</div>
-                      <div class="font-light text-sm">Da Nang Airport</div>
-                    </div>
-
-                    <div class="flex flex-col items-start gap-y-1">
-                      <div class="text-sm font-semibold">
-                        Ho Chi Minh City (SGN)
-                      </div>
-                      <div class="font-light text-sm">Tansonnhat Intl</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="lg:ml-auto lg:mt-0 mt-2 lg:w-2/3">
-                  <div class="flex gap-x-2">
-                    <span
-                      ><img
-                        src="./assets/image/bambooairline.png"
-                        alt="bambooairline"
-                    /></span>
-                    <div>
-                      <div class="text-sm font-semibold uppercase">
-                        BAMBOO AIRWAYS
-                      </div>
-                      <p class="text-xs font-light">
-                        <span>QH-183</span>- <span>Economy</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div
-                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-2 gap-2 p-2"
-                  >
-                    <div>
-                      <span class="text-sm font-light">Baggage</span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >20kg</span
-                      >
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">In-flight</span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >Meal</span
-                      >
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">In-flight</span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >Entertainment</span
-                      >
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">Aircraft </span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >Airbus A321</span
-                      >
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">Seat layout </span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >3-3</span
-                      >
-                    </div>
-                    <div>
-                      <span class="text-sm font-light">Seat pitch </span>
-                      <span class="text-[#4D46FA] text-sm font-semibold"
-                        >29 inches (standard)</span
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mt-4 flex tab-body hidden flex-wrap" id="fare-info">
-                <div class="lg:w-1/3">
-                  <div class="text-md uppercase font-semibold mb-5">
-                    Conditions
-                  </div>
-                  <div class="flex gap-x-2">
-                    <span
-                      ><img
-                        src="./assets/image/bambooairline.png"
-                        alt="bambooairline"
-                    /></span>
-                    <div>
-                      <div class="text-sm font-semibold uppercase">
-                        BAMBOO AIRWAYS
-                      </div>
-                      <p class="text-xs font-light">
-                        <span>QH-183</span>- <span>Economy</span>
-                      </p>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-x-2 mt-2 mb-1">
-                    <div class="capitalize font-light text-md">Da Nang</div>
-                    <div>
-                      <svg
-                        width="63"
-                        height="7"
-                        viewBox="0 0 63 7"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          x="0.5"
-                          y="0.5"
-                          width="6"
-                          height="6"
-                          rx="3"
-                          fill="white"
-                          stroke="#4D46FA"
-                        />
-                        <rect
-                          x="56"
-                          width="7"
-                          height="7"
-                          rx="3.5"
-                          fill="#4D46FA"
-                        />
-                        <line
-                          x1="6"
-                          y1="3.5"
-                          x2="56"
-                          y2="3.5"
-                          stroke="#4D46FA"
-                        />
-                      </svg>
-                    </div>
-                    <div class="capitalize font-light text-md">Ho chi minh</div>
-                  </div>
-                  <div class="text-[#4D46FA] font-light text-xs">Economy</div>
-                  <p class="text-sm font-light mt-5">
-                    <span>QH-183</span>- <span>Economy</span>
-                  </p>
-                </div>
-                <div class="lg:ml-auto mt-2 lg:mt-0 w-full lg:w-2/3">
-                  <div class="text-md uppercase font-semibold mb-5">
-                    price details
-                  </div>
-                  <div>
-                    <table class="w-full">
-                      <tbody>
-                        <tr>
-                          <td class="font-normal pb-1">
-                            Adult Basic Fare (x1)
-                          </td>
-                          <td class="text-right font-semibold pb-1">
-                            1,326,000 vnd
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-normal py-1">Tax</td>
-                          <td class="text-right font-normal py-1">included</td>
-                        </tr>
-                        <tr>
-                          <td class="font-normal py-1">Regular Total Price</td>
-                          <td class="text-right font-normal py-1">
-                            1,326,000 vnd
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="text-[#F06336] font-medium py-1">Save</td>
-                          <td class="text-right font-normal py-1">
-                            -4,000 vnd
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="font-normal border-t-2 py-2">You Pay</td>
-                          <td
-                            class="text-right text-[#F06336] font-semibold border-t-2 py-2"
-                          >
-                            1,322,000 vnd
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div id="list-flight-container">
-            <div class="mt-1 bg-white p-[20px] rounded-xl">
+            <div class="mt-1 bg-white p-3 md:p-[20px] rounded-xl">
               <div class="flex items-center justify-between flex-wrap">
                 <div class="flex items-center gap-x-2">
                   <span
@@ -1518,7 +1150,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div class="flex items-center gap-x-2">
                     <div class="h-[14px]">
                       <img
@@ -1548,7 +1180,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div>
                     <del class="text-sm font-extralight opacity-50"
                       >1,326,000 vnd</del
@@ -1560,7 +1192,7 @@
                 </div>
                 <div>
                   <button
-                    class="btn-choose bg-[#F063361A] text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
+                    class="btn-choose bg-[#F063361A] w-full text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
                   >
                     Choose
                   </button>
@@ -1576,7 +1208,7 @@
                   >fare info</span
                 >
                 <div
-                  class="ml-auto h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
+                  class="ml-auto hidden md:block h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
                 ></div>
               </div>
 
@@ -1584,19 +1216,19 @@
                 class="mt-4 flex tab-body hidden flex-wrap"
                 id="flight-detail"
               >
-                <div class="flex gap-x-8 lg:w-1/3">
+                <div class="flex gap-x-4 md:gap-x-8 lg:w-1/3">
                   <div
-                    class="flex flex-col justify-between items-start gap-y-5"
+                    class="flex flex-col justify-between items-start gap-y-3"
                   >
                     <div class="flex flex-col items-center gap-y-1">
                       <div class="text-sm font-semibold">21:40</div>
-                      <div class="font-light text-sm">11 Feb</div>
+                      <div class="font-light text-xs sm:text-sm">11 Feb</div>
                     </div>
-                    <div class="font-light text-sm">1h30m</div>
+                    <div class="font-light text-xs sm:text-sm">1h30m</div>
                     <div>
                       <div class="flex flex-col items-center gap-y-1">
                         <div class="text-sm font-semibold">21:40</div>
-                        <div class="font-light text-sm">11 Feb</div>
+                        <div class="font-light text-xs sm:text-sm">11 Feb</div>
                       </div>
                     </div>
                   </div>
@@ -1668,7 +1300,7 @@
                     </div>
                   </div>
                   <div
-                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-2 gap-2 p-2"
+                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-1 md:grid-cols-2 w-full md:gap-2 gap-y-2 p-2"
                   >
                     <div>
                       <span class="text-sm font-light">Baggage</span>
@@ -1730,7 +1362,7 @@
                     </div>
                   </div>
                   <div class="flex items-center gap-x-2 mt-2 mb-1">
-                    <div class="capitalize font-light text-md">Da Nang</div>
+                    <div class="capitalize font-light text-sm">Da Nang</div>
                     <div>
                       <svg
                         width="63"
@@ -1764,7 +1396,7 @@
                         />
                       </svg>
                     </div>
-                    <div class="capitalize font-light text-md">Ho chi minh</div>
+                    <div class="capitalize font-light text-sm">Ho chi minh</div>
                   </div>
                   <div class="text-[#4D46FA] font-light text-xs">Economy</div>
                   <p class="text-sm font-light mt-5">
@@ -1772,40 +1404,40 @@
                   </p>
                 </div>
                 <div class="lg:ml-auto mt-2 lg:mt-0 w-full lg:w-2/3">
-                  <div class="text-md uppercase font-semibold mb-5">
+                  <div class="text-sm uppercase font-semibold mb-5">
                     price details
                   </div>
                   <div>
                     <table class="w-full">
                       <tbody>
                         <tr>
-                          <td class="font-normal pb-1">
+                          <td class="font-normal text-xs md:text-sm pb-1">
                             Adult Basic Fare (x1)
                           </td>
-                          <td class="text-right font-semibold pb-1">
+                          <td class="text-right font-semibold text-xs md:text-sm pb-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Tax</td>
-                          <td class="text-right font-normal py-1">included</td>
+                          <td class="font-normal text-xs md:text-sm py-1">Tax</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">included</td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Regular Total Price</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="font-normal text-xs md:text-sm py-1">Regular Total Price</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="text-[#F06336] font-medium py-1">Save</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="text-[#F06336] font-medium text-xs md:text-sm py-1">Save</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             -4,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal border-t-2 py-2">You Pay</td>
+                          <td class="font-normal text-xs md:text-sm border-t-2 py-2">You Pay</td>
                           <td
-                            class="text-right text-[#F06336] font-semibold border-t-2 py-2"
+                            class="text-right text-[#F06336] font-semibold text-xs md:text-sm border-t-2 py-2"
                           >
                             1,322,000 vnd
                           </td>
@@ -1816,9 +1448,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div id="list-flight-container">
-            <div class="mt-1 bg-white p-[20px] rounded-xl">
+            <div class="mt-1 bg-white p-3 md:p-[20px] rounded-xl">
               <div class="flex items-center justify-between flex-wrap">
                 <div class="flex items-center gap-x-2">
                   <span
@@ -1884,7 +1514,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div class="flex items-center gap-x-2">
                     <div class="h-[14px]">
                       <img
@@ -1914,7 +1544,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div>
                     <del class="text-sm font-extralight opacity-50"
                       >1,326,000 vnd</del
@@ -1926,7 +1556,7 @@
                 </div>
                 <div>
                   <button
-                    class="btn-choose bg-[#F063361A] text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
+                    class="btn-choose bg-[#F063361A] w-full text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
                   >
                     Choose
                   </button>
@@ -1942,7 +1572,7 @@
                   >fare info</span
                 >
                 <div
-                  class="ml-auto h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
+                  class="ml-auto hidden md:block h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
                 ></div>
               </div>
 
@@ -1950,19 +1580,19 @@
                 class="mt-4 flex tab-body hidden flex-wrap"
                 id="flight-detail"
               >
-                <div class="flex gap-x-8 lg:w-1/3">
+                <div class="flex gap-x-4 md:gap-x-8 lg:w-1/3">
                   <div
-                    class="flex flex-col justify-between items-start gap-y-5"
+                    class="flex flex-col justify-between items-start gap-y-3"
                   >
                     <div class="flex flex-col items-center gap-y-1">
                       <div class="text-sm font-semibold">21:40</div>
-                      <div class="font-light text-sm">11 Feb</div>
+                      <div class="font-light text-xs sm:text-sm">11 Feb</div>
                     </div>
-                    <div class="font-light text-sm">1h30m</div>
+                    <div class="font-light text-xs sm:text-sm">1h30m</div>
                     <div>
                       <div class="flex flex-col items-center gap-y-1">
                         <div class="text-sm font-semibold">21:40</div>
-                        <div class="font-light text-sm">11 Feb</div>
+                        <div class="font-light text-xs sm:text-sm">11 Feb</div>
                       </div>
                     </div>
                   </div>
@@ -2034,7 +1664,7 @@
                     </div>
                   </div>
                   <div
-                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-2 gap-2 p-2"
+                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-1 md:grid-cols-2 w-full md:gap-2 gap-y-2 p-2"
                   >
                     <div>
                       <span class="text-sm font-light">Baggage</span>
@@ -2096,7 +1726,7 @@
                     </div>
                   </div>
                   <div class="flex items-center gap-x-2 mt-2 mb-1">
-                    <div class="capitalize font-light text-md">Da Nang</div>
+                    <div class="capitalize font-light text-sm">Da Nang</div>
                     <div>
                       <svg
                         width="63"
@@ -2130,7 +1760,7 @@
                         />
                       </svg>
                     </div>
-                    <div class="capitalize font-light text-md">Ho chi minh</div>
+                    <div class="capitalize font-light text-sm">Ho chi minh</div>
                   </div>
                   <div class="text-[#4D46FA] font-light text-xs">Economy</div>
                   <p class="text-sm font-light mt-5">
@@ -2138,40 +1768,40 @@
                   </p>
                 </div>
                 <div class="lg:ml-auto mt-2 lg:mt-0 w-full lg:w-2/3">
-                  <div class="text-md uppercase font-semibold mb-5">
+                  <div class="text-sm uppercase font-semibold mb-5">
                     price details
                   </div>
                   <div>
                     <table class="w-full">
                       <tbody>
                         <tr>
-                          <td class="font-normal pb-1">
+                          <td class="font-normal text-xs md:text-sm pb-1">
                             Adult Basic Fare (x1)
                           </td>
-                          <td class="text-right font-semibold pb-1">
+                          <td class="text-right font-semibold text-xs md:text-sm pb-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Tax</td>
-                          <td class="text-right font-normal py-1">included</td>
+                          <td class="font-normal text-xs md:text-sm py-1">Tax</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">included</td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Regular Total Price</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="font-normal text-xs md:text-sm py-1">Regular Total Price</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="text-[#F06336] font-medium py-1">Save</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="text-[#F06336] font-medium text-xs md:text-sm py-1">Save</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             -4,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal border-t-2 py-2">You Pay</td>
+                          <td class="font-normal text-xs md:text-sm border-t-2 py-2">You Pay</td>
                           <td
-                            class="text-right text-[#F06336] font-semibold border-t-2 py-2"
+                            class="text-right text-[#F06336] font-semibold text-xs md:text-sm border-t-2 py-2"
                           >
                             1,322,000 vnd
                           </td>
@@ -2182,9 +1812,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div id="list-flight-container">
-            <div class="mt-1 bg-white p-[20px] rounded-xl">
+            <div class="mt-1 bg-white p-3 md:p-[20px] rounded-xl">
               <div class="flex items-center justify-between flex-wrap">
                 <div class="flex items-center gap-x-2">
                   <span
@@ -2250,7 +1878,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div class="flex items-center gap-x-2">
                     <div class="h-[14px]">
                       <img
@@ -2280,7 +1908,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="order-last md:order-none">
+                <div class="md:order-none">
                   <div>
                     <del class="text-sm font-extralight opacity-50"
                       >1,326,000 vnd</del
@@ -2292,7 +1920,7 @@
                 </div>
                 <div>
                   <button
-                    class="btn-choose bg-[#F063361A] text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
+                    class="btn-choose bg-[#F063361A] w-full text-[#F06336] text-sm font-semibold rounded-xl py-2 px-4"
                   >
                     Choose
                   </button>
@@ -2308,7 +1936,7 @@
                   >fare info</span
                 >
                 <div
-                  class="ml-auto h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
+                  class="ml-auto hidden md:block h-[0.5px] lg:w-2/3 w-1/2 bg-black opacity-50"
                 ></div>
               </div>
 
@@ -2316,19 +1944,19 @@
                 class="mt-4 flex tab-body hidden flex-wrap"
                 id="flight-detail"
               >
-                <div class="flex gap-x-8 lg:w-1/3">
+                <div class="flex gap-x-4 md:gap-x-8 lg:w-1/3">
                   <div
-                    class="flex flex-col justify-between items-start gap-y-5"
+                    class="flex flex-col justify-between items-start gap-y-3"
                   >
                     <div class="flex flex-col items-center gap-y-1">
                       <div class="text-sm font-semibold">21:40</div>
-                      <div class="font-light text-sm">11 Feb</div>
+                      <div class="font-light text-xs sm:text-sm">11 Feb</div>
                     </div>
-                    <div class="font-light text-sm">1h30m</div>
+                    <div class="font-light text-xs sm:text-sm">1h30m</div>
                     <div>
                       <div class="flex flex-col items-center gap-y-1">
                         <div class="text-sm font-semibold">21:40</div>
-                        <div class="font-light text-sm">11 Feb</div>
+                        <div class="font-light text-xs sm:text-sm">11 Feb</div>
                       </div>
                     </div>
                   </div>
@@ -2400,7 +2028,7 @@
                     </div>
                   </div>
                   <div
-                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-2 gap-2 p-2"
+                    class="bg-[#F4F2F9] mt-3 rounded-md grid grid-cols-1 md:grid-cols-2 w-full md:gap-2 gap-y-2 p-2"
                   >
                     <div>
                       <span class="text-sm font-light">Baggage</span>
@@ -2462,7 +2090,7 @@
                     </div>
                   </div>
                   <div class="flex items-center gap-x-2 mt-2 mb-1">
-                    <div class="capitalize font-light text-md">Da Nang</div>
+                    <div class="capitalize font-light text-sm">Da Nang</div>
                     <div>
                       <svg
                         width="63"
@@ -2496,7 +2124,7 @@
                         />
                       </svg>
                     </div>
-                    <div class="capitalize font-light text-md">Ho chi minh</div>
+                    <div class="capitalize font-light text-sm">Ho chi minh</div>
                   </div>
                   <div class="text-[#4D46FA] font-light text-xs">Economy</div>
                   <p class="text-sm font-light mt-5">
@@ -2504,40 +2132,40 @@
                   </p>
                 </div>
                 <div class="lg:ml-auto mt-2 lg:mt-0 w-full lg:w-2/3">
-                  <div class="text-md uppercase font-semibold mb-5">
+                  <div class="text-sm uppercase font-semibold mb-5">
                     price details
                   </div>
                   <div>
                     <table class="w-full">
                       <tbody>
                         <tr>
-                          <td class="font-normal pb-1">
+                          <td class="font-normal text-xs md:text-sm pb-1">
                             Adult Basic Fare (x1)
                           </td>
-                          <td class="text-right font-semibold pb-1">
+                          <td class="text-right font-semibold text-xs md:text-sm pb-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Tax</td>
-                          <td class="text-right font-normal py-1">included</td>
+                          <td class="font-normal text-xs md:text-sm py-1">Tax</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">included</td>
                         </tr>
                         <tr>
-                          <td class="font-normal py-1">Regular Total Price</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="font-normal text-xs md:text-sm py-1">Regular Total Price</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             1,326,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="text-[#F06336] font-medium py-1">Save</td>
-                          <td class="text-right font-normal py-1">
+                          <td class="text-[#F06336] font-medium text-xs md:text-sm py-1">Save</td>
+                          <td class="text-right font-normal text-xs md:text-sm py-1">
                             -4,000 vnd
                           </td>
                         </tr>
                         <tr>
-                          <td class="font-normal border-t-2 py-2">You Pay</td>
+                          <td class="font-normal text-xs md:text-sm border-t-2 py-2">You Pay</td>
                           <td
-                            class="text-right text-[#F06336] font-semibold border-t-2 py-2"
+                            class="text-right text-[#F06336] font-semibold text-xs md:text-sm border-t-2 py-2"
                           >
                             1,322,000 vnd
                           </td>
