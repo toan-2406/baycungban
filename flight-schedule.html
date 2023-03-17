@@ -77,36 +77,43 @@
     />
   </head>
   <body class="bg-[#E5E5E5]">
-    <ul class="menu z-40">
-      <li class="inline-block px-5 rounded-xl">
-        <a
-          href="#"
-          class="py-2 px-3  rounded-full hover:bg-[#00000024] font-normal"
-          >Promotion</a
-        >
-      </li>
-      <li class="inline-block px-5">
-        <a
-          href="flight-schedule.html"
-          class="py-2 px-3 bg-[#00000024] rounded-full hover:bg-[#00000024] font-normal"
-          >Flight Schedule</a
-        >
-      </li>
-      <li class="inline-block px-5">
-        <a
-          href="#"
-          class="py-2 px-3  rounded-full hover:bg-[#00000024] font-normal"
-          >About us</a
-        >
-      </li>
-      <li class="inline-block px-5">
-        <a
-          href="#"
-          class="py-2 px-3 rounded-full hover:bg-[#00000024] font-normal"
-          >Payment Guide</a
-        >
-      </li>
-    </ul>
+    <div class="menu w-2/3 z-40">
+      <ul class="flex flex-col gap-y-2">
+        <li class="inline-block px-5 rounded-xl">
+          <a
+            href="#"
+            class="py-2 px-3  rounded-full hover:bg-[#00000024] font-normal"
+            >Promotion</a
+          >
+        </li>
+        <li class="inline-block px-5">
+          <a
+            href="flight-schedule.html"
+            class="py-2 px-3 bg-[#00000024] rounded-full hover:bg-[#00000024] font-normal"
+            >Flight Schedule</a
+          >
+        </li>
+        <li class="inline-block px-5">
+          <a
+            href="#"
+            class="py-2 px-3  rounded-full hover:bg-[#00000024] font-normal"
+            >About us</a
+          >
+        </li>
+        <li class="inline-block px-5">
+          <a
+            href="#"
+            class="py-2 px-3 rounded-full hover:bg-[#00000024] font-normal"
+            >Payment Guide</a
+          >
+        </li>
+      </ul>
+      <button
+            class="font-semibold px-4 py-2.5 text-white rounded-xl bg-[#4D46FA] text-sm md:hidden"
+          >
+            Booking now
+          </button>
+    </div>
     <!-- Modal change flight -->
     <div
       id="modal-change-flight"
@@ -498,7 +505,7 @@
       >
         <div class="block toggle-menu lg:hidden z-40">
           <img
-            class="h-[20px]"
+            class="h-[15px] md:h-[20px]"
             src="./assets/image/menu-icon.png"
             alt="menu icon"
           />
@@ -654,7 +661,7 @@
         </ul>
 
         <button
-          class="font-semibold px-4 py-2.5 text-[#4D46FA] rounded-xl bg-white text-sm"
+          class="font-semibold hidden md:block px-4 py-2.5 text-[#4D46FA] rounded-xl bg-white text-sm"
         >
           Booking now
         </button>
@@ -664,11 +671,12 @@
     <div class="relative lg:max-w-[1260px] lg:px-[30px] px-4 py-[15px] mx-auto">
       <div class="flex flex-row flex-wrap">
         <main role="main" class="w-full md:w-2/3 lg:w-3/4">
-          <div class="max-w-7xl">
-            <div class="font-semibold opacity-50 w-full text-center uppercase text-sm">
+          <div class="max-w-7xl md:flex items-center justify-end
+          ">
+            <div class="font-semibold opacity-50 md:w-fit md:mr-2 w-full text-center uppercase text-sm">
               Filter
             </div>
-            <div class="grid grid-cols-2  gap-1">
+            <div class="md:flex grid grid-cols-2  gap-1">
               <div class="w-full md:w-fit">
                 <select
                   id="transit-filter"

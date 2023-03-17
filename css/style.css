@@ -27,7 +27,6 @@ body{
   left: 0;
   background-color: rgb(255, 255, 255);
   height: 100vh;
-  width: 40%;
   display: flex;
   flex-direction: column;
   text-align: center;

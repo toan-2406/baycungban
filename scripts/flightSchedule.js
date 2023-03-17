@@ -62,7 +62,7 @@ if (!flightInfo) {
          ${flightInfo.typeSeat}
       </div>
     </div>
-    <div class="btn-change bg-[#F06336] w-full justify-center order-last flex items-center gap-x-2 cursor-pointer py-1 px-2 rounded-md">
+    <div class="btn-change bg-[#F06336] w-full md:w-fit justify-center order-last flex items-center gap-x-2 cursor-pointer py-1 px-2 rounded-md">
       <p class="text-sm font-semibold text-white ">Change Flights</p>
       <span
         ><svg
